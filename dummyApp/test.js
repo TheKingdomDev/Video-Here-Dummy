@@ -3,8 +3,7 @@ console.log("linked");
 var youtubeKey = "AIzaSyC6BkKzkgAhJoLwYgb2JgtY6UhCEqdN0ng";
 var queryURL = "https://www.googleapis.com/youtube/v3/search";
 var searchVideos = ["cats", "food", "dogs"];
-var currentAddress = $("#current-address").val().trim();
-var cardAddress = $("#card-address").val().trim();
+
 
 
 $(document).ready(function() {
@@ -58,14 +57,15 @@ renderButtons();
     
     event.preventDefault();
 
+    var currentAddress = $("#current-address").val().trim();
+    var cardAddress = $("#card-address").val().trim();
+
     if(currentAddress !== cardAddress) {
       console.log("wrong!");
       $("#address-fail").append('<img src="http://download.gamezone.com/uploads/image/data/1204957/star-wars-darth-vader-sixth-scale-feature-1000763.jpg">');
-    }else if(currentAddress === cardAddress)  {
+    }else {
       $("#address-success").append('<img src="http://vignette2.wikia.nocookie.net/sonic/images/9/9c/Mario_-_Mario_Party_10.png/revision/latest?cb=20150609205200">');
       console.log("score");
-    }else {
-      console.log("what?")
     }
 
   });
